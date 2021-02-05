@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>像素时代 - 来这里创造属于你的像素时代！</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1279672499&web_id=1279672499"></script>
+    <script type="text/javascript">
+        //声明_czc对象:
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1279672499"]);
+        // 获取终端的相关信息
+        var Terminal = {
+            // 辨别移动终端类型
+            platform: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    // android终端或者uc浏览器
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                    // 是否为iPhone或者QQHD浏览器
+                    iPhone: u.indexOf('iPhone') > -1,
+                    // 是否iPad
+                    iPad: u.indexOf('iPad') > -1
+                };
+            }(),
+            // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+
+        // 根据不同的终端，跳转到不同的地址
+        var theUrl = 'https://itunes.apple.com/cn/app/id1299542018';
+        if (Terminal.platform.android) {
+            //安卓端
+            _czc.push(['_trackEvent', '像素时代', '下载', 'Android']);
+            theUrl = 'https://www.taptap.com/app/204412';
+            location.href = theUrl;
+        } else {
+            if (Terminal.platform.iPhone) {
+                //iPhone端
+                _czc.push(['_trackEvent', '像素时代', '下载', 'iPhone']);
+                theUrl = 'https://itunes.apple.com/cn/app/id1542289088';
+            } else if (Terminal.platform.iPad) {
+                //iPad端
+                _czc.push(['_trackEvent', '像素时代', '下载', 'iPad']);
+                theUrl = 'https://itunes.apple.com/cn/app/id1542289088';
+            } else {
+                _czc.push(['_trackEvent', '像素时代', '下载', 'Other']);
+                document.write('“像素时代”仅支持安卓和IOS版本，其他平台敬请期待！');
+            }
+
+            location.href = theUrl;
+        }
+
+    </script>
+</body>
+
+</html>
