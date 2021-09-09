@@ -7,11 +7,20 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1279672758&web_id=1279672758"></script>
-    <script type="text/javascript">
-        //声明_czc对象:
+    <script type="text/javascript" charset="utf-8" async defer>
+
+        var cnzzJs = document.createElement('script')
+        cnzzJs.type = 'text/javascript'
+        cnzzJs.async = true
+        cnzzJs.charset = 'utf-8'
+        cnzzJs.src = "https://s9.cnzz.com/z_stat.php?id=1279869857&web_id=1279869857&async=1"
+        var rootJs = document.getElementsByTagName('script')[0]
+        rootJs.parentNode.insertBefore(cnzzJs, rootJs)
+
+
         var _czc = _czc || [];
-        _czc.push(["_setAccount", "1279672758"]);
+        _czc.push(["_setAccount", "1279869857"]);
+
         // 获取终端的相关信息
         var Terminal = {
             // 辨别移动终端类型
@@ -34,21 +43,37 @@
         var theUrl = 'https://itunes.apple.com/cn/app/id1542289088';
         if (Terminal.platform.android) {
             //安卓端
-            _czc.push(['_trackEvent', '像素时代', '下载', 'Android']);
             theUrl = 'https://www.taptap.com/app/204412';
             location.href = theUrl;
+            setTimeout(() => { 
+                if (_czc) {  
+                    _czc.push([ '_trackEvent', '像素时代', '分享统计', 'Android渠道']);
+                }
+            }, 300); 
         } else {
             if (Terminal.platform.iPhone) {
                 //iPhone端
-                _czc.push(['_trackEvent', '像素时代', '下载', 'iPhone']);
                 theUrl = 'https://itunes.apple.com/cn/app/id1542289088';
+                setTimeout(() => { 
+                    if (_czc) {  
+                        _czc.push([ '_trackEvent', '像素时代', '分享统计', 'IPhone渠道']);
+                    }
+                }, 300);
             } else if (Terminal.platform.iPad) {
                 //iPad端
-                _czc.push(['_trackEvent', '像素时代', '下载', 'iPad']);
                 theUrl = 'https://itunes.apple.com/cn/app/id1542289088';
+                setTimeout(() => { 
+                    if (_czc) {  
+                        _czc.push([ '_trackEvent', '像素时代', '分享统计', 'IPad渠道']);
+                    }
+                }, 300);
             } else {
-                _czc.push(['_trackEvent', '像素时代', '下载', 'Other']);
                 document.write('“像素时代”仅支持安卓和IOS版本，其他平台敬请期待！');
+                setTimeout(() => { 
+                    if (_czc) {  
+                        _czc.push([ '_trackEvent', '像素时代', '分享统计', '其他渠道']);
+                    }
+                }, 300);
             }
 
             location.href = theUrl;
